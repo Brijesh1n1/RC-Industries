@@ -138,7 +138,8 @@ def create_quotation(request):
         })
 
         # Path to wkhtmltopdf binary (optional if already in PATH)
-        config = pdfkit.configuration(wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe")
+        # config = pdfkit.configuration(wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe")
+        config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
 
         pdf = pdfkit.from_string(html, False, configuration=config)
 
