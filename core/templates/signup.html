@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}signup{% endblock %}
+{% block content %}
+<div class="login-card mx-auto mt-1">
+  <h4 class="text-center mb-4">Create an Account</h4>
+  <!-- show non-field errors, e.g. duplicate email -->
+  {% if form.non_field_errors %}
+  <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+  {% endif %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-floating mb-3">
+      {{ field }}
+      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      <!-- field-specific validation errors -->
+      {% if field.errors %}
+      <div class="invalid-feedback d-block">
+        {{ field.errors|striptags }}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <button class="btn btn-success w-100" type="submit">Sign Up</button>
+  </form>
+
+  <div class="text-center mt-3">
+    <small>Already have an account? <a href="{% url 'login' %}">Login</a></small>
+  </div>
+</div>
+{% endblock %}

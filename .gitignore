@@ -1,0 +1,30 @@
+# Large media files
+*.tiff
+*.avi
+*.flv
+*.wmv
+*.pyc
+*__pycache__/
+*.xlsx
+*.csv
+mediafiles/
+media/
+#media
+static/
+migrations/
+
+# venv
+venv/
+env/
+
+.mypy_cache/
+.cache/
+
+*.env
+*.vscode
+*.pid
+
+# database & logs
+*.db
+*.sqlite3
+*.log
