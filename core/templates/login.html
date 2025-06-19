@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="login-card mx-auto mt-5" style="max-width: 400px;">
+  <h4 class="text-center mb-4">Login to Your Account</h4>
+
+  {% if form.non_field_errors %}
+    <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+  {% endif %}
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-floating mb-3">
+        {{ field }}
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {% if field.errors %}
+          <div class="invalid-feedback d-block">
+            {{ field.errors|striptags }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <button class="btn btn-primary w-100" type="submit">Login</button>
+  </form>
+
+  <div class="text-center mt-3">
+    <small>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></small>
+  </div>
+</div>
+{% endblock %}

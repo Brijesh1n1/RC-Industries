@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Quotation History{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Your Quotation History</h2>
+  {% if quotations %}
+    <table class="table table-bordered mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Client</th>
+          <th>Company</th>
+          <th>Total Amount</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for q in quotations %}
+        <tr>
+          <td>{{ q.id }}</td>
+          <td>{{ q.client_name }}</td>
+          <td>{{ q.client_company }}</td>
+          <td>₹{{ q.total_amount }}</td>
+          <td>{{ q.created_at|date:"d M Y, H:i" }}</td>
+          <td>
+            <a href="#" class="btn btn-sm btn-primary">View PDF</a>
+            <!-- Optional delete or edit actions can be added here -->
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No quotations found.</p>
+  {% endif %}
+</div>
+{% endblock %}

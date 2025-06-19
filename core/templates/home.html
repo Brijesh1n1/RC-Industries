@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}home Quotation{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-lg-4 column p-4">
+            <div class="card gr-1">
+                <div class="txt">
+                    <h1>Create </br>
+                        Quotation</h1>
+                    <p>Visual communication and problem-solving</p>
+                </div>
+                <a href="{% url 'quotation' %}">Create</a>
+                <div class="ico-card">
+                    <i class="fa fa-rebel"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4 column p-4">
+            <div class="card gr-2">
+                <div class="txt">
+                    <h1>Quotation </br>
+                        History</h1>
+                    <p>How design is implemented on the web.</p>
+                </div>
+                <a href="{% url 'quotation_history' %}">View</a>
+                <div class="ico-card">
+                    <i class="fa fa-codepen"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4 column p-4">
+            <div class="card gr-3">
+                <div class="txt">
+                    <h1>View Machines </br>AND Update</h1>
+                    <p>User Interface and User Experience Design.</p>
+                </div>
+                <a href="#">View</a>
+                <div class="ico-card">
+                    <i class="fa fa-empire"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
