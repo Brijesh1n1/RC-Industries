@@ -132,6 +132,7 @@ def create_quotation(request):
             "quotation": quotation,
             "machines": machines_data,
             "terms": terms,
+            "user": user,
             'logo_url':logo_img_url,
             "date": datetime.datetime.now().strftime("%d/%m/%Y"),
             "subject": "PVC Pipe Bending Machine"

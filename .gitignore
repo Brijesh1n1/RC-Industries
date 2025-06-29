@@ -10,7 +10,7 @@
 mediafiles/
 media/
 #media
-static/
+#static/
 migrations/
 
 # venv
